@@ -1,0 +1,66 @@
+@import "constants";
+@import "function";
+
+@mixin DESKTOP(){
+  @media screen and (min-width: $TABLET-L){
+    @content;
+  }
+}
+
+@mixin MOBILE(){
+  @media screen and (max-width: $TABLET){
+    @content;
+  }
+}
+
+@mixin TABLET(){
+  @media  screen and (max-width: $TABLET-L) and (min-width:$TABLET - 1){
+    @content;
+  }
+}
+
+@mixin TAB-MOB(){
+  @media  screen and (max-width: $TABLET-L) and (min-width:$MOBILE ){
+    @content;
+  }
+  @media screen and (max-width: $MOBILE){
+    @content;
+  }
+}
+
+@mixin option($n,$v,$vm: $v,$vt: $vm){
+  @include DESKTOP(){
+    #{$n}:vh($v);
+  }
+
+  @include MOBILE(){
+    #{$n}:vw-m($vm);
+  }
+
+  @include TABLET(){
+    #{$n}:vw-t($vt);
+  }
+}
+
+@mixin option-m($n,$vm){
+  @include MOBILE(){
+    #{$n}:vw-m($vm);
+  }
+}
+
+@mixin option-t($n,$vt){
+  @include TABLET(){
+    #{$n}:vw-t($vt);
+  }
+}
+
+@mixin option-d($n,$v){
+  @include DESKTOP(){
+    #{$n}:vh($v);
+  }
+}
+
+@mixin wrapper(){
+  @include option(max-width,$DESKTOP,$MOBILE,$TABLET);
+  margin: 0 auto;
+}

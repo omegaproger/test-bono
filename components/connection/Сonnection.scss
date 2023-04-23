@@ -1,0 +1,83 @@
+.connection{
+  position: relative;
+  &__content{
+    position: relative;
+    @include wrapper();
+    @include option(padding,139px 220px,75px 20px,100px 70px);
+    box-sizing: border-box;
+    color: white;
+    .connection_in &{
+      animation: appearance 0.7s ease-in-out ;
+    }
+  }
+  &__title{
+    @include option(font-size,60px,40px,50px);
+    font-weight: 300;
+    @include option(margin,0 0 70px,0 0 90px,0 0 66px);
+  }
+  &__form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__input{
+    &_error{
+      border: 3px solid #FB5555;
+    }
+    &:focus{
+      outline: 0;
+    }
+    @include option(height,50px);
+    @include option(width,376px,280px,297px);
+    @include option(font-size,18px);
+    @include option(padding,14px 20px);
+    &:not(:last-child){
+      @include option(margin,0 0 26px);
+    }
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0;
+    border: none;
+    &_massage{
+      font-family: $BASE-FONT;
+      font-weight: 300;
+      @include option(height,120px);
+      width: 100%;
+      @include MOBILE(){
+        margin: 0!important;
+      }
+    }
+    &_btn{
+      margin-left: auto;
+      @include option(width,240px);
+      @include option(height,70px);
+      text-transform: uppercase;
+      @include option(font-size,14px);
+      color: white;
+      letter-spacing: 0.67em;
+      background-color: #007DFE;
+      @include MOBILE(){
+        @include option-m(margin,138px auto 0);
+      }
+    }
+
+  }
+  &__contacts{
+    display: block;
+    @include option(margin,112px 0 30px);
+    text-align: center;
+    white-space: pre-line;
+    font-weight: 300;
+    @include option(font-size,40px,28px,40px);
+    line-height: 1.4;
+  }
+  &__info{
+    display: block;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    @include option(font-size,18px);
+  }
+
+}

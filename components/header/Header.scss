@@ -1,0 +1,146 @@
+.header{
+  position: relative;
+  width: 100%;
+  background-color: white;
+  transform: translate(0,-100%);
+  &_in{
+    animation: bottom 0.7s ease-in-out ;
+    transform: translate(0,0%);
+    position: relative;
+    z-index: 1111;
+  }
+
+
+  &__content{
+    position: relative;
+    @include wrapper();
+    @include option(height, 66px);
+    display: flex;
+    align-items: center;
+    @include option(padding,16px 51px,16px 20px,16px 27px);
+    box-sizing: border-box;
+    color: #0A2756;
+  }
+
+  &__logo{
+    position: relative;
+    @include option(font-size, 29px);
+    @include option(line-height, 35px);
+    white-space: pre;
+  }
+
+  &__block{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @include TAB-MOB(){
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      right: 0;
+      top: 100%;
+      background: white;
+      transform: translate(100%,0);
+      transition: transform .5s ease-in-out;
+      z-index: 1111;
+    }
+    @include TABLET(){
+      height: 170vh;
+    }
+    &_active{
+      transform: translate(0%,0);
+    }
+  }
+
+  &__menu{
+    position: relative;
+    border-left: 1px solid #C4C4C4;
+    @include option-d(padding,0 24px);
+    @include option(margin,0 23px, 0 0 20px, 0 0 62px);
+    @include TAB-MOB(){
+      border: none;
+    }
+  }
+  &__menu-list{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    @include TAB-MOB(){
+      flex-direction: column;
+    }
+  }
+  &__menu-item{
+
+    &:not(:last-child){
+      @include option-d(margin-right,34px);
+      @include option(margin-bottom,0,31px,63px)
+    }
+    @include option(font-size,16px,22px,32px);
+    @include option(line-height,19px,26px,38px);
+    list-style: none;
+    a{
+      text-decoration: none;
+      color: #0A2756;
+    }
+  }
+  &__btn{
+    @include option(width,161px,180px,262px);
+    @include option(height,36px,40px,58px);
+    border: 1px solid #007DFE;
+    background: none;
+    @include option(font-size, 16px,22px,32px);
+    @include option(line-height, 19px,26px,38px);
+
+    color: #007DFE;
+    @include option(margin-bottom,0,39px,86px);
+    @include MOBILE(){
+      border-width: 1.5px;
+    }
+    @include TABLET(){
+      border-width: 2.5px;
+    }
+    cursor: pointer;
+  }
+
+  &__icons{
+    display: flex;
+    align-items: center;
+    margin-left:auto ;
+    @include TAB-MOB(){
+      margin: 0;
+    }
+  }
+  &__icon{
+    cursor: pointer;
+    img{
+      width: auto;
+      height: 100%;
+    }
+    &_mail{
+      @include option(height,20px);
+      @include option(margin-right,13px);
+    }
+    &_fb{
+      @include option(height,26px);
+    }
+  }
+
+  &__burger{
+    margin-left: auto;
+    @include option(height,0,21px,21px);
+    img{
+      width: auto;
+      height: 100%;
+    }
+    @include DESKTOP(){
+      display: none;
+    }
+  }
+
+}

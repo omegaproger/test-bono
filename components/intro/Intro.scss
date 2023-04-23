@@ -1,0 +1,108 @@
+.intro{
+  position: relative;
+  color: white;
+
+  @mixin in(){
+    .intro_in &{
+      @content;
+    }
+  }
+
+  &__bg{
+    position: absolute;
+    pointer-events: none;
+    @include option(width,$DESKTOP,$MOBILE,$TABLET);
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    @include in(){
+      animation: appearance 0.7s ease-in-out ;
+    }
+  }
+  &__bg-item{
+    position: absolute;
+    @include option(right,38px,41px,38px);
+    @include option(top,34px,406px,53px);
+    @include option(height,361px,215px,211px);
+    img{
+      width: auto;
+      height: 100%;
+    }
+    @include in(){
+      animation: shaking .7s ease-in-out ;
+      animation-delay: 1s;
+    }
+  }
+  &__content{
+    @include wrapper();
+    @include option(padding,69px 220px 70px,60px 20px 130px,83px 74px 37px);
+    box-sizing: border-box;
+    @include in(){
+      animation: appearance .7s ease-in-out ;
+    }
+
+  }
+  &__title-svg{
+    position: relative;
+    @include option(height,293px,157px,220px);
+    @include option(right,55px,0,46px);
+    img{
+      width: auto;
+      height: 100%;
+    }
+  }
+  &__btn{
+    @include option(width,423px,279px,423px);
+    @include option(height,71px);
+    @include option(font-size,14px);
+    @include option(margin,58px 0 48px, 65px 0 322px, 65px 0 48px);
+    line-height: 1.4;
+    letter-spacing: 0.67em;
+    text-transform: uppercase;
+    background-color: #007DFE;
+    border: none;
+    color: white;
+    cursor: pointer;
+    @include MOBILE(){
+      letter-spacing: 0.3em;
+    }
+  }
+  &__title{
+    white-space: pre-line;
+    @include option(font-size,20px);
+    line-height: 1.3;
+    @include option(margin,0 0 35px);
+  }
+  &__text{
+    width: 70%;
+    white-space: pre-line;
+    @include option(font-size,19px);
+    line-height: 1.4;
+    margin: 0;
+    @include MOBILE(){
+      white-space: normal;
+      width: 100%;
+    }
+    @include TABLET(){
+      width: 85%;
+    }
+  }
+  &__btn-arrow{
+    position: relative;
+    display: block;
+    @include option(width,85px);
+    @include option(margin, 48px auto 0,0,73px auto 0);
+    background: none;
+    border: none;
+    cursor: pointer;
+    img{
+      width: 100%;
+      height: auto;
+    }
+    @include MOBILE(){
+      display: none;
+    }
+    animation: jumps 0.5s ease-in-out alternate infinite;
+  }
+}

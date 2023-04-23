@@ -1,0 +1,44 @@
+@keyframes jumps{
+  0% {
+    transform: translate(0,0%);
+  }
+
+  100% {
+    transform: translate(0,30%);
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bottom {
+  0% {
+    transform: translate(0,-100%);
+  }
+
+  100% {
+    transform: translate(0,0%);
+  }
+}
+@keyframes shaking {
+  0% {
+
+  }
+  30%{
+    transform: rotate(-4deg);
+  }
+  50%{
+    transform: rotate(4deg);
+  }
+
+  100% {
+
+  }
+}
